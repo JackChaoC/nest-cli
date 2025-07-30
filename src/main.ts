@@ -54,7 +54,7 @@ async function bootstrap() {
       .addBearerAuth()
       .build();
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('api-docs', app, document);
+    SwaggerModule.setup(`${prefix}/docs`, app, document);
   }
 
   // 获取配置端口
@@ -70,7 +70,7 @@ async function bootstrap() {
   );
 
   Logger.log(
-    chalk.green(`\nNest-Cli 服务启动成功`) + '\n',
+    chalk.green(`\nNest-Cli 服务启动成功`) + '\n'
     +
     chalk.green('上传文件存储路径') +
     `        ${fileUploadBasePath}` +
